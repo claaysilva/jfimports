@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovine | Moda Masculina Premium</title>
+    <meta name="description" content="Especialistas em vestuário masculino com pronta entrega em Recife e envio para todo o Brasil.">
+    
+    <style>
+        /* Variáveis de Cores - Baseadas na Logo Jovine */
+        :root {
+            --cor-primaria: #C1121F; /* Vermelho escuro/Vinho da logo */
+            --cor-secundaria: #000000; /* Preto da logo */
+            --cor-fundo: #FDFDFD;
+            --cor-fundo-alt: #F4F4F4;
+            --cor-texto: #333333;
+            --cor-texto-claro: #555555;
+            --cor-branco: #FFFFFF;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--cor-texto);
+            line-height: 1.6;
+            background-color: var(--cor-fundo);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--cor-secundaria);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: var(--cor-branco);
+            padding: 14px 28px;
+            border-radius: 2px; /* Design mais reto e sofisticado para moda */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--cor-branco);
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo-header img {
+            max-height: 80px;
+            width: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--cor-primaria);
+            margin: 15px auto 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--cor-fundo-alt);
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--cor-texto-claro);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Quem Somos */
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sobre-texto {
+            flex: 1;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--cor-texto-claro);
+        }
+
+        .sobre-img {
+            flex: 1;
+            text-align: center;
+            background-color: var(--cor-branco);
+            padding: 40px;
+            border: 1px solid #eaeaea;
+        }
+
+        .sobre-img img {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Diferenciais */
+        .solucoes {
+            background-color: var(--cor-secundaria);
+        }
+
+        .solucoes .section-title {
+            color: var(--cor-branco);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--cor-branco);
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--cor-primaria);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--cor-secundaria);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: var(--cor-texto-claro);
+        }
+
+        /* Contato */
+        .contato-wrapper {
+            display: flex;
+            gap: 50px;
+            background-color: var(--cor-branco);
+            padding: 40px;
+            border: 1px solid #eaeaea;
+        }
+
+        .contato-info {
+            flex: 1;
+        }
+
+        .contato-info h3 {
+            color: var(--cor-secundaria);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .contato-info p {
+            margin-bottom: 15px;
+            color: var(--cor-texto-claro);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contato-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contato-form input, 
+        .contato-form textarea {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background-color: var(--cor-fundo-alt);
+        }
+
+        .contato-form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111111;
+            color: var(--cor-branco);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 15px;
+        }
+
+        .footer-info h4, .footer-links h4 {
+            color: var(--cor-branco);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-info p {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            color: #999999;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #999999;
+            font-size: 0.85rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--cor-primaria);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: #666666;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .footer-bottom span {
+            font-weight: 600;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .sobre-content, .contato-wrapper {
+                flex-direction: column;
+            }
+            .sobre-img img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo-header">
+                <img src="img/image_ea9b87.png" alt="Jovine Moda Masculina">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">A Marca</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Sua Roupa Nova a Um Clique</h1>
+            <p>Elegância, praticidade e qualidade premium em vestuário masculino. Garantimos a melhor experiência do pedido à entrega.</p>
+            <a href="#contato" class="btn">Fale Conosco</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Nossa Essência</h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <p>A <strong>Jovine</strong> (operada legalmente como MONACO VESTUARIO LTDA) é uma marca dedicada a redefinir o padrão do vestuário masculino, unindo estilo contemporâneo e conforto absoluto.</p>
+                    <p>Com sede estratégica em Recife, Pernambuco, nossa operação foi desenhada para atender homens exigentes que buscam praticidade sem abrir mão da sofisticação. Trabalhamos com processos rigorosos de controle de qualidade e uma logística ágil para garantir que a sua peça chegue impecável.</p>
+                    <p>Mais do que roupas, entregamos confiança. Nosso compromisso é com a excelência no atendimento e a transparência em todas as etapas da sua jornada de compra.</p>
+                </div>
+                <div class="sobre-img">
+                    <img src="img/image_ea9b87.png" alt="Logotipo Oficial Jovine">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="solucoes">
+        <div class="container">
+            <h2 class="section-title">Por que escolher a Jovine?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Pronta Entrega</h3>
+                    <p>Agilidade garantida. Contamos com estoque a pronta entrega para toda a região metropolitana de Recife - PE, assegurando rapidez no seu dia a dia.</p>
+                </div>
+                <div class="card">
+                    <h3>Envio Nacional</h3>
+                    <p>Quebrando fronteiras. Estruturamos uma logística eficiente que nos permite enviar nossas peças para todo o território nacional (Brasil) com total segurança.</p>
+                </div>
+                <div class="card">
+                    <h3>Padrão Premium</h3>
+                    <p>Atuamos no setor de comércio varejista de artigos de vestuário com um rigoroso padrão de seleção de tecidos e acabamentos para o público masculino.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Atendimento</h2>
+            <div class="contato-wrapper">
+                <div class="contato-info">
+                    <h3>Fale com a Equipe</h3>
+                    <p>Dúvidas sobre envios, parcerias corporativas ou detalhes de nossas coleções? Entre em contato conosco.</p>
+                    <br>
+                    <p><strong>E-mail Institucional:</strong> marciojoaoviananeto@gmail.com</p>
+                    <p><strong>Telefone / WhatsApp:</strong> (81) 99283-8139</p>
+                    <p><strong>Sede Oficial:</strong> Av. João de Barros, 1894 - Sala 0107, Encruzilhada, Recife - PE</p>
+                </div>
+                <form class="contato-form" action="#" method="POST">
+                    <input type="text" placeholder="Nome Completo" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="tel" placeholder="Telefone com DDD">
+                    <textarea placeholder="Como podemos ajudar?" required></textarea>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/image_ea9b87.png" alt="Jovine Vestuário">
+            </div>
+            
+            <div class="footer-info">
+                <h4>Dados Fiscais e Jurídicos</h4>
+                <p>MONACO VESTUARIO LTDA</p>
+                <p>CNPJ: 60.492.478/0001-08</p>
+                <p>Av. João de Barros, 1894 - Sala 0107</p>
+                <p>Encruzilhada - Recife, PE - CEP 52.021-355</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Transparência</h4>
+                <ul>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Trocas e Devoluções</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 MONACO VESTUARIO LTDA. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <span>CSCode</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
